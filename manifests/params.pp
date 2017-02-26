@@ -1,7 +1,7 @@
 # Parameters for puppet-tacker
 #
 class tacker::params {
-  include ::openstacklib::defaults
+  #include ::openstacklib::defaults
 
   $client_package_name = 'python-tackerclient'
   case $::osfamily {

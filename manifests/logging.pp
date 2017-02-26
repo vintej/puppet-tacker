@@ -115,23 +115,4 @@ class tacker::logging(
 
   include ::tacker::deps
 
-  oslo::log { 'tacker_config':
-    use_stderr                    => $use_stderr,
-    use_syslog                    => $use_syslog,
-    log_dir                       => $log_dir,
-    log_file                      => $log_file,
-    debug                         => $debug,
-    logging_context_format_string => $logging_context_format_string,
-    logging_default_format_string => $logging_default_format_string,
-    logging_debug_format_suffix   => $logging_debug_format_suffix,
-    logging_exception_prefix      => $logging_exception_prefix,
-    log_config_append             => $log_config_append,
-    default_log_levels            => $default_log_levels,
-    publish_errors                => $publish_errors,
-    fatal_deprecations            => $fatal_deprecations,
-    instance_format               => $instance_format,
-    instance_uuid_format          => $instance_uuid_format,
-    log_date_format               => $log_date_format,
-    syslog_log_facility           => $syslog_log_facility,
-  }
 }

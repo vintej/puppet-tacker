@@ -158,7 +158,7 @@
 # Copyright 2016 Red Hat Inc, unless otherwise noted.
 #
 class tacker(
-  $rpc_backend                        = 'rabbit',
+  $rpc_backend                        = '',
   $default_transport_url              = $::os_service_default,
   $rpc_response_timeout               = $::os_service_default,
   $control_exchange                   = $::os_service_default,
@@ -189,7 +189,7 @@ class tacker(
   $amqp_sasl_config_name              = $::os_service_default,
   $amqp_username                      = $::os_service_default,
   $amqp_password                      = $::os_service_default,
-  $sync_db                            = true,
+  $sync_db                            = false,
 ) inherits tacker::params {
 
   include ::tacker::deps
@@ -236,9 +236,9 @@ class tacker(
     tacker_config { 'DEFAULT/rpc_backend': value => $rpc_backend }
   }
 
-  oslo::messaging::default { 'tacker_config':
-    transport_url        => $default_transport_url,
-    rpc_response_timeout => $rpc_response_timeout,
-    control_exchange     => $control_exchange,
-  }
+#  oslo::messaging::default { 'tacker_config':
+#    transport_url        => $default_transport_url,
+#    rpc_response_timeout => $rpc_response_timeout,
+#    control_exchange     => $control_exchange,
+#  }
 }
