@@ -16,6 +16,7 @@ class tacker::client (
     ensure => $ensure,
     name   => $::tacker::params::client_package_name,
     tag    => 'openstack',
+    provider => 'pip'
   }
 
 }

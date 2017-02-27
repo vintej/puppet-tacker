@@ -47,7 +47,7 @@ class tacker::server(
     ensure => $package_ensure,
     name   => $::tacker::params::package_name,
     tag    => ['openstack', 'tacker-package'],
-    provider => "pip"
+    provider => 'pip'
   }
 
   tacker_config {
