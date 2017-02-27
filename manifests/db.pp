@@ -47,14 +47,14 @@ class tacker::db (
 
   validate_re($database_connection,
     '^(sqlite|mysql(\+pymysql)?|postgresql):\/\/(\S+:\S+@\S+\/\S+)?')
- oslo::db { 'tacker_config':
-    connection     => $database_connection,
-    idle_timeout   => $database_idle_timeout,
-    min_pool_size  => $database_min_pool_size,
-    max_retries    => $database_max_retries,
-    retry_interval => $database_retry_interval,
-    max_pool_size  => $database_max_pool_size,
-    max_overflow   => $database_max_overflow,
-  }
+ #oslo::db { 'tacker_config':
+  #  connection     => $database_connection,
+  #  idle_timeout   => $database_idle_timeout,
+  #  min_pool_size  => $database_min_pool_size,
+  #  max_retries    => $database_max_retries,
+  #  retry_interval => $database_retry_interval,
+  #  max_pool_size  => $database_max_pool_size,
+  #  max_overflow   => $database_max_overflow,
+  #}
 
 }
