@@ -18,5 +18,9 @@ class tacker::client (
     tag    => 'openstack',
     provider => 'pip'
   }
+  #exec { 'changing-certificate':
+  #  command => '/bin/cat /etc/ssl/certs/cncloud.com.crt >> /usr/local/lib/python2.7/dist-packages/requests/cacert.pem',
+  #  path    => '/usr/local/lib/python2.7/dist-packages/requests/cacert.pem',
+  #}
 
 }

@@ -13,16 +13,18 @@
 #   Defaults to 'congress'
 #
 class tacker::db::sync(
-  $extra_params  = '--config-file /etc/tacker/tacker.conf',
+  $extra_params  = '--config-file /usr/local/etc/tacker/tacker.conf',
   $user = 'tacker',
 ) {
 
   include ::tacker::deps
-
+  include ::tacker::params
+  include ::tacker::server
+  exec['changing-server-certificate'] -> exec['tacker-db-sync']
   exec { 'tacker-db-sync':
-    command     => "tacker-db-manage ${extra_params} upgrade head",
+    command     => "/usr/local/bin/tacker-db-manage --config-file /usr/local/etc/tacker/tacker.conf upgrade head",
     path        => ['/bin', '/usr/bin'],
-    user        => $user,
+    #user        => $user,
     refreshonly => true,
     try_sleep   => 5,
     tries       => 10,

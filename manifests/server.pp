@@ -48,6 +48,10 @@ class tacker::server(
     name   => $::tacker::params::package_name,
     tag    => ['openstack', 'tacker-package'],
     provider => 'pip'
+  }-> 
+  exec { 'changing-server-certificate':
+    command => '/usr/bin/pip uninstall -y requests',
+    path    => '/usr/bin/pip',
   }
 
   tacker_config {

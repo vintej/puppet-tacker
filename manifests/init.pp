@@ -189,11 +189,12 @@ class tacker(
   $amqp_sasl_config_name              = $::os_service_default,
   $amqp_username                      = $::os_service_default,
   $amqp_password                      = $::os_service_default,
-  $sync_db                            = false,
+  $sync_db                            = true,
 ) inherits tacker::params {
 
   include ::tacker::deps
   include ::tacker::logging
+  include ::tacker::db
 
   if $sync_db {
     include ::tacker::db::sync
