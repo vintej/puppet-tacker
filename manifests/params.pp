@@ -10,7 +10,7 @@ class tacker::params {
       $service_name     = 'openstack-tacker-server'
     }
     'Debian': {
-      $package_name     = 'git+https://github.com/openstack/tacker.git@de6cc86ae0c065d67f0607170ab2a2d8d83cc947'
+      $package_name     = 'git+https://github.com/openstack/tacker.git@stable/mitaka'
       $service_name     = 'tacker-server'
       $sqlite_package_name  = 'python-pysqlite2'
       $pymysql_package_name = 'python-pymysql'
