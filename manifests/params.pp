@@ -3,7 +3,7 @@
 class tacker::params {
   #include ::openstacklib::defaults
 
-  $client_package_name = 'git+https://github.com/openstack/python-tackerclient.git@885b53b6d0b18de61b8e0f3f48367a104ca97d4e'
+  $client_package_name = 'git+https://github.com/openstack/python-tackerclient.git@stable/mitaka'
   case $::osfamily {
     'RedHat': {
       $package_name     = 'git+https://github.com/openstack/tacker@stable/mitaka'
